@@ -1,0 +1,44 @@
+from urllib.request import urlopen as uReq
+from bs4 import BeautifulSoup as soup
+
+my_url = 'https://www.bestbuy.com/site/searchpage.jsp?st=headset&_dyncharset=UTF-8&id=pcat17071&type=page&sc=Global&cp=1&nrp=&sp=&qp=&list=n&af=true&iht=y&usc=All+Categories&ks=960&keys=keys'
+
+#opening connection with url and grabbing page
+uClient = uReq(my_url)
+page_html = uClient.read()
+
+uClient.close()
+
+#html parsing
+page_soup = soup(page_html, "html.parser").string
+
+
+#grabs each headset at best buy
+items = page_soup.findAll("div", class_ = "list-item")
+	
+for items.length
+
+
+
+
+#infos = "data-price-json"
+#infers = "data-pricing-type"
+#prices = [] 
+#idx = 0
+
+
+#for item in items:
+	##prices[idx] = "data_price="
+ #str_soup = item
+ #ind1 = str_soup.find(infos, 0, len(str_soup))
+ #ind2 = str_soup.find(infers, ind1, len(str_soup))
+ #important = str_soup[ind1:ind2]
+ #idx++
+
+#for item in page_soup:
+ 
+ #ind1 = item.find(infos, 0, len(item))
+ #ind2 = item.find(infers, ind1, len(item))
+ #important = str(item)
+ #important[ind1:ind2]
+	#print item.contents[0].find_all("div",{"data-price-json"})
